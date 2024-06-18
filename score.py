@@ -75,6 +75,8 @@ def main(args) -> None:
     model.to(device)
     model.eval()
 
+    torch.manual_seed(seed)
+
     if args.pdb_path_multi:
         with open(args.pdb_path_multi, "r") as fh:
             pdb_paths = list(json.load(fh))

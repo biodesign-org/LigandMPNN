@@ -91,6 +91,8 @@ def main(args) -> None:
     model.to(device)
     model.eval()
 
+    torch.manual_seed(seed)
+
     if args.pack_side_chains:
         model_sc = Packer(
             node_features=128,
